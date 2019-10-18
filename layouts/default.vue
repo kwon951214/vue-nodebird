@@ -1,17 +1,40 @@
 <template>
-    <div>
+    <v-app>
         <nav>
-            <nuxt-link to="/">Home</nuxt-link>
-            <nuxt-link to="/profile">Profile</nuxt-link>
-            <nuxt-link to="/signup">signup</nuxt-link>
-            <nuxt-link to="layouts/admin">admin</nuxt-link>
+            <v-toolbar dark color="green">
+                <v-toolbar-title>
+                    <nuxt-link to="/">Nodebird</nuxt-link>
+                </v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-toolbar-items>
+                    <v-text-field label="검색" hide-details prepend-icon="mdi-magnify"
+                                  :style="{ display: 'flex', alignItems: 'center' }" />
+                    <v-btn text nuxt to="/profile">
+                        <div>프로필</div>
+                    </v-btn>
+                    <v-btn text nuxt to="/signup" :style="{display: 'flex', alignItems: 'center'}">
+                        회원가입
+                    </v-btn>
+                </v-toolbar-items>
+            </v-toolbar>
         </nav>
-        <nuxt/>
-    </div>
+        <v-row>
+            <v-col cols="12" xs="12" md="4">
+                로그인
+            </v-col>
+            <v-col cols="12" xs="12" md="8">
+                컨텐츠
+            </v-col>
+        </v-row>
+    </v-app>
 </template>
 <script>
-    export default {}
+export default {
+
+}
 </script>
 <style>
-
+    .v-application a {
+        color: #ebeff3;
+    }
 </style>

@@ -1,23 +1,28 @@
 <template>
-    <nav>
+    <div>
+        <v-container>
+            <v-card>
 
-    </nav>
-
+            </v-card>
+        </v-container>
+    </div>
 </template>
+
 <script>
     export default {
-        data(){
-            return{
-                name: 'Nuxt.js',
+        data() {
+            return {
+                name: 'Nuxt.js'
             }
         },
         head() {
-            return{
+            return {
                 title: '프로필'
             }
-        },
+        }
     }
 </script>
+
 <style>
 
 </style>

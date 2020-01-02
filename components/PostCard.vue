@@ -4,7 +4,7 @@
         <v-card-text>
             <div>
                 <h3>Boldduck</h3>
-                <div>꺅 ! >_<</div>
+                <div>안녕하세요</div>
             </div>
         </v-card-text>
         <v-card-actions>

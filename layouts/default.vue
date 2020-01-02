@@ -24,6 +24,7 @@
             </v-col>
             <v-col cols="12" xs="12" md="8">
 
+                <nuxt />
             </v-col>
         </v-row>
     </v-app>

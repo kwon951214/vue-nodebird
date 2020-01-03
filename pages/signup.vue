@@ -4,13 +4,14 @@
             <v-card>
                 <v-container>
                     <v-subheader>회원가입</v-subheader>
-                    <v-form v-model="valid" submit.prevent="onSubmitForm">
+                    <v-form ref="form" v-model="valid" v-on:submit.prevent="onSubmitForm">
                         <v-text-field v-model="email" label="이메일" type="email" :rules="emailRules" required/>
                         <v-text-field v-model="password" label="비밀번호" type="password" :rules="passwordRules" required/>
                         <v-text-field v-model="passwordCheck" label="비밀번호 확인" type="password"
                                       :rules="passwordCheckRules" required/>
                         <v-text-field v-model="nickname" label="닉네임" type="nickname" :rules="nicknameRules" required/>
-                        <v-checkbox v-model="terms" :rules="emailRules" required label="열심히 개발할 것을 나 자신과 약속합니다"/>
+                        <v-checkbox v-model="terms" :rules="[v=>!!v||'약관에 동의해야합니다']" required
+                                    label="열심히 개발할 것을 나 자신과 약속합니다"/>
                         <v-btn color="green" type="submit">가입하기</v-btn>
                     </v-form>
                 </v-container>
@@ -43,6 +44,15 @@
                     v => !!v || '비밀번호 확인은 필수입니다.',
                     v => v === this.password || '비밀번호 확인은 필수입니다.',
                 ]
+            }
+        },
+        methods: {
+            onSubmitForm() {
+               if( this.$refs.form.validate()){
+                   alert('회원가입 성공!');
+               }else{
+                   alert('유효하지 않은 형식입니다.');
+               }
             }
         },
         head() {

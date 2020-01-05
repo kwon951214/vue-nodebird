@@ -38,7 +38,7 @@
         components: {
             LoginForm
         },
-        compputed: {
+        computed: {
             name() {
                 return this.$store.state.posts.name;
             }

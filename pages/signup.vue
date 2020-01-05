@@ -4,7 +4,7 @@
             <v-card>
                 <v-container>
                     <v-subheader>회원가입</v-subheader>
-                    <v-form ref="form" v-model="valid" v-on:submit.prevent="onSubmitForm">
+                    <v-form ref="form" v-model="valid" @v-on:submit.prevent="onSubmitForm">
                         <v-text-field v-model="email" label="이메일" type="email" :rules="emailRules" required/>
                         <v-text-field v-model="password" label="비밀번호" type="password" :rules="passwordRules" required/>
                         <v-text-field v-model="passwordCheck" label="비밀번호 확인" type="password"
@@ -47,12 +47,26 @@
             }
         },
         methods: {
-            onSubmitForm() {
-               if( this.$refs.form.validate()){
-                   alert('회원가입 성공!');
-               }else{
-                   alert('유효하지 않은 형식입니다.');
-               }
+            async onSubmitForm() {
+                if (this.$refs.form.validate()) {
+                    try {
+                        const result = await this.$store.dispatch('users/signUp', {
+                            nickname: this.nickname,
+                            email: this.email
+                        })
+                    } catch
+                        (err) {
+
+                    }
+                    // .then(() => {
+                    //     this.$router.push({
+                    //         path: '/'
+                    //     })
+                    // })
+                    // .catch(() => {
+                    //     alert('회원가입 실패')
+                    // })
+                }
             }
         },
         head() {

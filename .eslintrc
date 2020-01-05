@@ -12,6 +12,8 @@
   ],
   "plugins": [],
   "rules": {
+    "vue/mustache-interpolation-spacing": "off",
+    "vue/html-indent": "off",
     "vue/max-attributes-per-line": "off",
     "vue/singleline-html-element-content-newline": "off"
   }

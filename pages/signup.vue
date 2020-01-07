@@ -49,14 +49,14 @@
         methods: {
             async onSubmitForm() {
                 if (this.$refs.form.validate()) {
+                    console.log(this.$refs.form.validate());
                     try {
                         const result = await this.$store.dispatch('users/signUp', {
                             nickname: this.nickname,
                             email: this.email
                         })
-                    } catch
-                        (err) {
-
+                    }catch (e) {
+                        console.error(e);
                     }
                     // .then(() => {
                     //     this.$router.push({

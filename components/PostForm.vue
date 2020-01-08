@@ -9,9 +9,9 @@
                             :success="success"
                             :rules="[v=>!!v.trim() ||'내용을 입력하세요']"
                             @input="onChangeTextarea"/>
+                <v-btn type="submit" color="green" absolute right>짹짹</v-btn>
+                <v-btn>이미지 업로드</v-btn>
             </v-form>
-            <v-btn type="submit" color="green" absolute right>짹짹</v-btn>
-            <v-btn>이미지 업로드</v-btn>
         </v-container>
     </v-card>
 </template>
@@ -21,6 +21,7 @@
     export default {
         data() {
             return {
+                valid: false,
                 hideDetails: false,
                 successMessages: '',
                 success: false
@@ -48,6 +49,7 @@
                         createAt: Date.now()
                     })
                         .then(() => {
+                            this.content ='';
                             this.hideDetails = false;
                             this.success = true;
                             this.successMessages = '게시글 등록 성공 !!';

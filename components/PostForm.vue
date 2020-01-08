@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card style="margin-bottom: 20px">
         <v-container>
             <v-form ref="form" v-model="valid" @submit.prevent="onSubmitForm">
                 <v-textarea v-model="content"

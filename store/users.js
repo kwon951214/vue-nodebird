@@ -1,11 +1,16 @@
 export const state = () => ({
-    me: null
+    me: null,
+    followerList:[],
+    followingList:[]
 });
 
 export const mutations = {
     setMe(state, payload) {
         state.me = payload;
     },
+    onChangeNickname({commit}, payload) {
+        state.me.nickname = payload.nickname;
+    }
 };
 
 export const actions = {
@@ -18,5 +23,8 @@ export const actions = {
     },
     logOut({commit}, payload) {
         commit('setMe', null);
+    },
+    onChangeNickname({ commit }, payload) {
+        commit('changeNickname', payload);
     }
 };

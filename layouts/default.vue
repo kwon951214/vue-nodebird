@@ -18,14 +18,13 @@
                 </v-toolbar-items>
             </v-toolbar>
         </nav>
-        <div>{{name}}</div>
-        <v-btn @click="onChangeName">바이바이</v-btn>
+<!--        <div>{{name}}</div>-->
+<!--        <v-btn @click="onChangeName">바이바이</v-btn>-->
         <v-row no-gutters>
             <v-col cols="12" md="4">
                 <LoginForm></LoginForm>
             </v-col>
             <v-col cols="12" md="8">
-
                 <nuxt/>
             </v-col>
         </v-row>
@@ -43,11 +42,11 @@
                 return this.$store.state.posts.name;
             }
         },
-        methods: {
-            onChangeName() {
-                this.$store.commit('posts/BYE');
-            }
-        }
+        // methods: {
+        //     onChangeName() {
+        //         this.$store.commit('posts/BYE');
+        //     }
+        // }
     };
 </script>
 <style>

@@ -45,6 +45,19 @@
                     v => v === this.password || '비밀번호 확인은 필수입니다.',
                 ]
             }
+        }, computed: {
+            me() {
+                return this.$store.state.users.me;
+            }
+        },
+        watch: {
+            me(value) {
+                if (value) {
+                    this.$router.push({
+                        path: '/'
+                    });
+                }
+            }
         },
         methods: {
             async onSubmitForm() {
@@ -55,7 +68,7 @@
                             nickname: this.nickname,
                             email: this.email
                         })
-                    }catch (e) {
+                    } catch (e) {
                         console.error(e);
                     }
                     // .then(() => {
@@ -73,6 +86,7 @@
             return {
                 title: '회원가입'
             }
-        }
+        },
+        middleware: 'anonymous'
     };
 </script>

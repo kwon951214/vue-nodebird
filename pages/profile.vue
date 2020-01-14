@@ -62,14 +62,15 @@
                 })
             },
             removeFollower(id) {
-                this.$store.dispatch('users/removeFollowing', { id } );
+                this.$store.dispatch('users/removeFollowing', {id});
             }
         },
         head() {
             return {
                 title: '프로필'
             }
-        }
+        },
+        middleware: 'authenticated'
     }
 </script>
 

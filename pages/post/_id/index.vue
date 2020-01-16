@@ -1,6 +1,6 @@
 <template>
     <v-container v-if="post">
-        <post-card: post="post"/>
+        <post-card post="post"/>
     </v-container>
     <div v-else>
         해당 아이디의 게시글이 존재하지 않습니다.

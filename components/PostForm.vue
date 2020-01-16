@@ -7,7 +7,7 @@
                             :hide-details="hide-details"
                             :success-messages="successMessages"
                             :success="success"
-                            :rules="[v=>!!v.trim() ||'내용을 입력하세요']"
+                            :rules="[v=>!v.trim() ||'내용을 입력하세요']"
                             @input="onChangeTextarea"/>
                 <v-btn type="submit" color="green" absolute right>짹짹</v-btn>
                 <v-btn>이미지 업로드</v-btn>

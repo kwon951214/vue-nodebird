@@ -39,7 +39,7 @@
         mounted() {
             window.addEventListener('scroll', this.onScroll);
         },
-        beforeDestory() {
+        beforeDestroy() {
             window.addEventListener('scroll', this.onScroll);
         }, methods: {
             onScroll() {

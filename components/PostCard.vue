@@ -4,12 +4,12 @@
             <v-image/>
             <v-card-title>
                 <h3>
-                    <nuxt-link :to="'/user/'+post.id">{{post.User.nickname}}</nuxt-link>
+                    <nuxt-link :to="'/user/'+post.id">{{POST.User.nickname}}</nuxt-link>
                 </h3>
             </v-card-title>
             <v-card-text>
                 <div>
-                    <div>{{post.content}}</div>
+                    <div>{{POST.content}}</div>
                 </div>
             </v-card-text>
             <v-card-actions>
@@ -57,7 +57,7 @@
             CommentForm
         },
         props: {
-            post: {
+            POST: {
                 type: Object,
                 required: true
             }

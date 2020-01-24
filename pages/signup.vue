@@ -60,25 +60,21 @@
             }
         },
         methods: {
-            async onSubmitForm() {
+            onSubmitForm() {
                 if (this.$refs.form.validate()) {
-                    console.log(this.$refs.form.validate());
-                    try {
-                        const result = await this.$store.dispatch('users/signUp', {
+                        this.$store.dispatch('users/signUp', {
                             nickname: this.nickname,
-                            email: this.email
+                            email: this.email,
+                            password: this.password
+                    })
+                    .then(() => {
+                        this.$router.push({
+                            path: '/'
                         })
-                    } catch (e) {
-                        console.error(e);
-                    }
-                    // .then(() => {
-                    //     this.$router.push({
-                    //         path: '/'
-                    //     })
-                    // })
-                    // .catch(() => {
-                    //     alert('회원가입 실패')
-                    // })
+                    })
+                    .catch(() => {
+                        alert('회원가입 실패')
+                    })
                 }
             }
         },

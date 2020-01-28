@@ -2,7 +2,7 @@
     <v-card style="margin-bottom: 20px">
         <v-container>
             <v-form ref="form" v-model="valid" @submit.prevent="onSubmitForm">
-                <v-textarea v-model="contents"
+                <v-textarea v-model="content"
                             autlined auto-grow clearable label="어떤 일이 있었나요?"
                             :hide-details="hideDetails"
                             :success-messages="successMessages"
@@ -41,7 +41,7 @@
             onSubmitForm() {
                 if (this.$refs.form.validate()) {
                     this.$store.dispatch('posts/add', {
-                        contents: this.contents,
+                        content: this.content,
                         user: {
                             nickname: this.me.nickname
                         },
